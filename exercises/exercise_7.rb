@@ -9,4 +9,12 @@ require_relative './exercise_6'
 puts "Exercise 7"
 puts "----------"
 
-# Your code goes here ...
+puts "Add a new store. What is the name?"
+@user_new_store = gets.chomp
+@new_store = Store.create(name: @user_new_store)
+if (@new_store.errors[:name] != [])
+  puts "Error! #{@new_store.errors[:name]}"
+end
+puts "Error! #{@new_store.errors[:annual_revenue]}"
+puts "Error! #{@new_store.errors[:mens_apparel]}"
+puts "Error! #{@new_store.errors[:womens_apparel]}"
